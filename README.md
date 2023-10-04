@@ -1,4 +1,4 @@
-# skypulse
+# Sky Pulse
 
 A new Flutter project.
 
