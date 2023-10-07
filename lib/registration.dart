@@ -1,14 +1,14 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatelessWidget {
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(24),
+          margin: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -26,13 +26,13 @@ class SignupPage extends StatelessWidget {
   _header(context) {
     return Column(
       children: [
-        Text(
+        const Text(
           "Create Account",
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
         Container(
-          margin: EdgeInsets.only(top: 8.0), // Add margin to the top
-          child: Text(
+          margin: const EdgeInsets.only(top: 8.0), // Add margin to the top
+          child: const Text(
             'Go ahead and sign up, begin your weather adventure!',
             style: TextStyle(fontSize: 15),
           ),
@@ -55,7 +55,7 @@ class SignupPage extends StatelessWidget {
               filled: true,
               prefixIcon: Icon(Icons.person)),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         TextField(
           decoration: InputDecoration(
               hintText: "Email",
@@ -64,9 +64,9 @@ class SignupPage extends StatelessWidget {
                   borderSide: BorderSide.none),
               fillColor: Theme.of(context).primaryColor.withOpacity(0.0),
               filled: true,
-              prefixIcon: Icon(Icons.email)),
+              prefixIcon: const Icon(Icons.email)),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         TextField(
           decoration: InputDecoration(
               hintText: "Password",
@@ -75,9 +75,9 @@ class SignupPage extends StatelessWidget {
                   borderSide: BorderSide.none),
               fillColor: Theme.of(context).primaryColor.withOpacity(0.0),
               filled: true,
-              prefixIcon: Icon(Icons.lock)),
+              prefixIcon: const Icon(Icons.lock)),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         TextField(
           decoration: InputDecoration(
             hintText: "Confirm password",
@@ -86,19 +86,19 @@ class SignupPage extends StatelessWidget {
                 borderSide: BorderSide.none),
             fillColor: Theme.of(context).primaryColor.withOpacity(0.0),
             filled: true,
-            prefixIcon: Icon(Icons.lock),
+            prefixIcon: const Icon(Icons.lock),
           ),
           obscureText: true,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             // shape: StadiumBorder(),
-            padding: EdgeInsets.symmetric(vertical: 16),
-            textStyle: TextStyle(fontSize: 20),
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            textStyle: const TextStyle(fontSize: 20),
           ),
-          child: Text(
+          child: const Text(
             "Create Account",
             style: TextStyle(fontSize: 20),
           ),
@@ -115,8 +115,8 @@ class SignupPage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("I already have an account!"),
-        TextButton(onPressed: () {}, child: Text("Sign in"))
+        const Text("I already have an account!"),
+        TextButton(onPressed: () {}, child: const Text("Sign in"))
       ],
     );
   }

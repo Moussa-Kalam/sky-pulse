@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:skypulse/loginpage.dart';
+import 'package:skypulse/registration.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -48,18 +51,69 @@ class HomePage extends StatelessWidget {
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
                 ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: const SignUp(),
+                        ));
+                  },
+                  child: Container(
+                    height: 52.h,
+                    width: 315.w,
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFF2663DF),
+                            Color(0xFF758FF0),
+                            // Color(0xFFFFFFFF)
+                          ]),
+                      boxShadow: const <BoxShadow>[
+                        BoxShadow(
+                          color: Color(0xFF9CADF2),
+                          blurRadius: 18,
+                          offset: Offset(0, 6),
+                          spreadRadius: 0,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Get Started',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Mulish',
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.h),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const LogIn(),
+                      ));
+                },
                 child: Container(
-                  height: 52.h,
+                  height: 46.h,
                   width: 315.w,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color(0xFF2663DF),
-                          Color(0xFF758FF0),
-                          // Color(0xFFFFFFFF)
-                        ]),
+                    gradient: const LinearGradient(colors: [
+                      Color(0xFF758FF0),
+                      Color(0xFFFFFFFF),
+                    ]),
                     boxShadow: const <BoxShadow>[
                       BoxShadow(
                         color: Color(0xFF9CADF2),
@@ -72,44 +126,13 @@ class HomePage extends StatelessWidget {
                   ),
                   child: const Center(
                     child: Text(
-                      'Get Started',
+                      'Sign In',
                       style: TextStyle(
-                        fontSize: 16,
                         fontFamily: 'Mulish',
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
                       ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20.h),
-              Container(
-                height: 46.h,
-                width: 315.w,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [
-                    Color(0xFF758FF0),
-                    Color(0xFFFFFFFF),
-                  ]),
-                  boxShadow: const <BoxShadow>[
-                    BoxShadow(
-                      color: Color(0xFF9CADF2),
-                      blurRadius: 18,
-                      offset: Offset(0, 6),
-                      spreadRadius: 0,
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Center(
-                  child: Text(
-                    'Sign In',
-                    style: TextStyle(
-                      fontFamily: 'Mulish',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black,
                     ),
                   ),
                 ),
