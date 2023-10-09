@@ -19,7 +19,6 @@ class ProfilePage extends StatelessWidget {
               _navbar(context),
               _header(context),
               _inputField(context),
-              // _alreadyhaveaacount(context),
             ],
           ),
         ),
@@ -78,10 +77,9 @@ _navbar(context) {
         ),
         SizedBox(
             height:
-                10), // Add some spacing between the title and the profile image
+                10), 
         CircleAvatar(
           radius: 50,
-          // Add the profile picture image here
           backgroundImage: AssetImage('assets/profile.png'),
         ),
       ],
@@ -141,7 +139,6 @@ _navbar(context) {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            // shape: StadiumBorder(),
             padding: EdgeInsets.symmetric(vertical: 16),
             textStyle: TextStyle(fontSize: 20),
           ),
@@ -154,7 +151,5 @@ _navbar(context) {
     );
   }
 
-  // _alreadyhaveaacount(context){
-  //   return TextButton(onPressed: (){}, child: Text("I already have an account"));
-  // }
+
 }
