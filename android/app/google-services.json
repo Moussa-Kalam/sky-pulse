@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988311392994",
+    "project_id": "skypulse-5c5d3",
+    "storage_bucket": "skypulse-5c5d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988311392994:android:15eb9b047f4e9e3b4fc4bb",
+        "android_client_info": {
+          "package_name": "com.example.skypulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCblTOotQocfMQ8NqJapPmnCrpubk8J24U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
