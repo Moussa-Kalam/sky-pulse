@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skypulse/firebase_options.dart';
 import 'package:skypulse/welcomescreen.dart';
+import "package:firebase_core/firebase_core.dart";
 
-void main() {
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var firebase = await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,
+);
+  print(firebase.options.apiKey);
   runApp(const MyApp());
 }
 
