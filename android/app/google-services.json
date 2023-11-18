@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "203334670239",
+    "project_id": "sky-pulse-bb55e",
+    "storage_bucket": "sky-pulse-bb55e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203334670239:android:6b2ed5041893246c96cfaa",
+        "android_client_info": {
+          "package_name": "com.example.skypulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ0QIPIgo-zviu7RiFdJl6T2S7PucUr2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
