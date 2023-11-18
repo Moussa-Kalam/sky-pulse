@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:skypulse/loginpage.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -116,7 +118,15 @@ class SignUp extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text("I already have an account!"),
-        TextButton(onPressed: () {}, child: const Text("Sign in"))
+        TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const LogIn()));
+            },
+            child: const Text("Sign in"))
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:skypulse/registration.dart';
 import 'package:skypulse/searchlocation.dart';
 
 class LogIn extends StatelessWidget {
@@ -98,7 +99,16 @@ class LogIn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text("Don't have an account?"),
-        TextButton(onPressed: () {}, child: const Text("Sign up"))
+        TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.rightToLeft,
+                    child: const SignUp(),
+                  ));
+            },
+            child: const Text("Sign up"))
       ],
     );
   }
