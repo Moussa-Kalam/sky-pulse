@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:skypulse/firebase_auth_services.dart';
 import 'package:skypulse/registration.dart';
 import 'package:skypulse/searchlocation.dart';
 
-class LogIn extends StatelessWidget {
+class LogIn extends StatefulWidget {
   const LogIn({super.key});
+
+  @override
+  State<LogIn> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         margin: const EdgeInsets.all(24),
         child: Column(
@@ -44,6 +54,7 @@ class LogIn extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         TextField(
+          controller: _emailController,
           decoration: InputDecoration(
               hintText: "Email",
               border: OutlineInputBorder(
@@ -55,6 +66,7 @@ class LogIn extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         TextField(
+          controller: _passwordController,
           decoration: InputDecoration(
             hintText: "Password",
             border: OutlineInputBorder(
@@ -68,13 +80,21 @@ class LogIn extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                PageTransition(
-                  type: PageTransitionType.rightToLeft,
-                  child: const SearchLocation(),
-                ));
+          onPressed: () async {
+            final message = await AuthServices().login(
+                email: _emailController.text,
+                password: _passwordController.text);
+
+            if (message!.contains("success")) {
+              Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.rightToLeft,
+                    child: const SearchLocation(),
+                  ));
+            }
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text(message)));
           }, ////
           style: ElevatedButton.styleFrom(
             // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
